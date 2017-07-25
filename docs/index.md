@@ -1,4 +1,5 @@
 
 # Project Development Documentation
 
-## [Testing](testing/)
+## [Testing](testing/index.md)
+## [Scaffolding](scaffolding/index.md)

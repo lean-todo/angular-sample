@@ -6,6 +6,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
   imports: [
     CommonModule
   ],
-  declarations: [TodoItemComponent]
+  declarations: [TodoItemComponent],
+  exports: [TodoItemComponent]
 })
 export class TodosModule { }

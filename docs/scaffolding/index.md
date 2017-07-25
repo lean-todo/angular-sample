@@ -8,5 +8,8 @@
 
     ng generate module todos
 
-And import the genrated module in ```app.module.ts```.
- 
+And import the generated module in ```app.module.ts```.
+
+### Component
+
+    ng generate component --module todos todos/todo-item

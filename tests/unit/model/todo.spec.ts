@@ -1,44 +1,26 @@
 import { Todo } from "../../../src/app/todos/model/todo";
 
+// TODO: test creation failures on missing params
+// TODO: think about an immutable object
+// TODO: think about 'do i need to test the props?'
+
 describe('Model Todo', () => {
 
-    let todo: Todo;
+    describe('it is creatable', () => {
 
-    beforeEach(() => {
-        todo = new Todo();
+        it('with id, text and done state', () => {
+            const todo = new Todo(-1, 'Unit Tests', false);
+            expect(todo.id).toEqual(-1);
+            expect(todo.text).toEqual('Unit Tests');
+            expect(todo.done).toEqual(false);
+        });
+
+        it('with id and text and default done state false', () => {
+            const todo = new Todo(-1, 'Unit Tests');
+            expect(todo.id).toEqual(-1);
+            expect(todo.text).toEqual('Unit Tests');
+            expect(todo.done).toEqual(false);
+        });
     });
-
-    it('is creatable', () => {
-
-        expect(todo instanceof Todo).toBeTruthy();
-
-    });
-
-    it('has an id property', () => { 
-
-        todo.id = 17;
-        expect(todo.id).toEqual(17);
-
-    });
-
-    it('has a text property', () => { 
-
-        todo.text = 'Unit tests';
-        expect(todo.text).toEqual('Unit tests');
-
-    });
-
-    it('has a done property', () => { 
-
-        todo.done = true; 
-        expect(todo.done).toEqual(true);
-
-    });
-
-    it('can be created with initial text', () => {
-
-        const todo = new Todo('Unit Tests');
-        expect(todo.text).toEqual('Unit Tests');
-        
-    });
+    
 });
